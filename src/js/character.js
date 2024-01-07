@@ -1,10 +1,10 @@
 /* eslint-disable max-classes-per-file */
-export class Character {
+class Character {
   constructor(name, type, attack, defence) {
     const validTypes = ['Bowman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'];
-    if (name.length < 2 && name.length > 10) {
+    if (name.length < 2 || name.length > 10) {
       throw new Error('"name" does not meet the length');
-    } else if (validTypes.includes(type)) {
+    } else if (!validTypes.includes(type)) {
       throw new Error('invalid "type"');
     }
 
@@ -19,7 +19,7 @@ export class Character {
 
 export class Bowerman extends Character {
   constructor(name) {
-    super(name);
+    super(name, 'Bowman');
     this.type = 'Bowman';
     this.attack = 25;
     this.defence = 25;
@@ -28,7 +28,7 @@ export class Bowerman extends Character {
 
 export class Swordsman extends Character {
   constructor(name) {
-    super(name);
+    super(name, 'Swordsman');
     this.type = 'Swordsman';
     this.attack = 40;
     this.defence = 10;
@@ -37,7 +37,7 @@ export class Swordsman extends Character {
 
 export class Magician extends Character {
   constructor(name) {
-    super(name);
+    super(name, 'Magician');
     this.type = 'Magician';
     this.attack = 10;
     this.defence = 40;
@@ -46,7 +46,7 @@ export class Magician extends Character {
 
 export class Daemon extends Character {
   constructor(name) {
-    super(name);
+    super(name, 'Daemon');
     this.type = 'Daemon';
     this.attack = 10;
     this.defence = 40;
@@ -55,7 +55,7 @@ export class Daemon extends Character {
 
 export class Undead extends Character {
   constructor(name) {
-    super(name);
+    super(name, 'Undead');
     this.type = 'Undead';
     this.attack = 25;
     this.defence = 25;
@@ -64,7 +64,7 @@ export class Undead extends Character {
 
 export class Zombie extends Character {
   constructor(name) {
-    super(name);
+    super(name, 'Zombie');
     this.type = 'Zombie';
     this.attack = 40;
     this.defence = 10;
