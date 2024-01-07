@@ -1,5 +1,5 @@
 import {
-  Bowerman, Swordsman, Magician, Daemon, Undead, Zombie,
+  Character, Bowerman, Swordsman, Magician, Daemon, Undead, Zombie,
 } from '../character';
 
 test('test Bowerman', () => {
@@ -38,11 +38,10 @@ test('test Zombie', () => {
   expect(zombie.health).toBe(100);
 });
 
-// test('test "type" Error', () => {
-//   const zombie = new Zombie('Zombie');
-//   zombie.type = 'Z';
-// });
-
 test('test "name" Error', () => {
   expect(() => new Magician('Reeeeeally Long Name')).toThrow(Error);
+});
+
+test('test "type" Error', () => {
+  expect(() => new Character('Character', 'Unknow Type')).toThrow(Error);
 });
