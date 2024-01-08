@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --coverage",
     "build": "webpack --mode production",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "author": "DarkElf2233",
   "license": "ISC",
